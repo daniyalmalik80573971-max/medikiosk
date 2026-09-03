@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Database files (auto-generated)
+server/data/
+server/uploads/
+
+# Environment variables (keep .env.example but not real .env)
+server/.env
+client/.env
+
+# Build output
+client/dist/
+client/.vite/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
