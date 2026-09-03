@@ -776,6 +776,16 @@ app.use('/api/documents', docsRouter);
 // ─── HEALTH ───────────────────────────────────────────────────
 app.get('/api/health', (req, res) => res.json({ status: 'OK', db: 'nedb (embedded)', timestamp: new Date() }));
 
+// ─── SERVE FRONTEND IN PRODUCTION ────────────────────────────
+const clientBuildPath = path.join(__dirname, '..', 'client', 'dist');
+if (fs.existsSync(clientBuildPath)) {
+  app.use(express.static(clientBuildPath));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(clientBuildPath, 'index.html'));
+  });
+  console.log('✅ Serving frontend from client/dist');
+}
+
 // ─── ERROR HANDLER ────────────────────────────────────────────
 app.use((err, req, res, next) => {
   console.error(err.stack);

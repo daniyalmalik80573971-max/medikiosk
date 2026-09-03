@@ -1,1 +1,13 @@
-{"name":"medikiosk","version":"1.0.0","description":"MediKiosk AI Powered Patient Case-Taking Software","scripts":{"seed":"cd server && node seedData.js"},"dependencies":{"@tailwindcss/vite":"^4.3.3","@vitejs/plugin-react":"^6.1.1","axios":"^1.20.0","jspdf":"^4.2.1","lucide-react":"^1.39.0","react-hot-toast":"^2.6.0","react-router-dom":"^7.18.3","tailwindcss":"^4.3.3"}}
+{
+  "name": "medikiosk",
+  "version": "1.0.0",
+  "description": "MediKiosk - AI Powered Patient Case-Taking Software (SIH26047)",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build",
+    "install-all": "npm install --prefix server && npm install --prefix client"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
